@@ -10,10 +10,12 @@ import {
     MentalHealth,
     Profile,
 } from "./pages";
+import Header from "./components/Header";
 
 const router = createBrowserRouter([
     {
         path: "/",
+        element: <Header />,
         children: [
             { index: true, element: <Home /> },
             { path: "/login", element: <Login /> },
