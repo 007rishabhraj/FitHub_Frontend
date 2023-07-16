@@ -11,12 +11,7 @@ import { Link, Outlet } from "react-router-dom";
 function Header() {
     return (
         <>
-            <Navbar
-                bg="dark"
-                data-bs-theme="dark"
-                expand="lg"
-                className="bg-body-tertiary"
-            >
+            <Navbar bg="black" variant="dark" expand="lg">
                 <Container>
                     <Navbar.Brand>Fithub</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -64,6 +59,13 @@ function Header() {
                 </Container>
             </Navbar>
             <Outlet />
+            <Navbar bg="black" variant="dark" className="mt-3">
+                <Container className="justify-content-center">
+                    <Navbar.Text>
+                        &copy; {new Date().getFullYear()} Fithub
+                    </Navbar.Text>
+                </Container>
+            </Navbar>
         </>
     );
 }

@@ -113,7 +113,9 @@ const Signup = () => {
                             Submit
                         </Button>
                     </Form>
-                    <GoogleOAuthProvider clientId="809388333953-mp4ic4ssmigroi4aa1oi98opm2u0cgjt.apps.googleusercontent.com">
+                    <GoogleOAuthProvider
+                        clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}
+                    >
                         <GoogleLogin />
                     </GoogleOAuthProvider>
                 </Card>

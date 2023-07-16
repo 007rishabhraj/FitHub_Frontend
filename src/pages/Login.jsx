@@ -25,7 +25,16 @@ const Login = () => {
                             label="email"
                             className="mt-3"
                         >
-                            <Form.Control placeholder=" " />
+                            <Form.Control
+                                type="email"
+                                placeholder=" "
+                                value={input.email}
+                                onInput={(e) =>
+                                    setInput((t) => {
+                                        return { ...t, email: e.target.value };
+                                    })
+                                }
+                            />
                         </FloatingLabel>
                         <FloatingLabel
                             style={{ color: "black" }}
@@ -35,6 +44,15 @@ const Login = () => {
                             <Form.Control
                                 type={show ? "text" : "password"}
                                 placeholder=" "
+                                value={input.password}
+                                onInput={(e) =>
+                                    setInput((t) => {
+                                        return {
+                                            ...t,
+                                            password: e.target.value,
+                                        };
+                                    })
+                                }
                             />
                         </FloatingLabel>
                         <Form.Check
@@ -47,7 +65,9 @@ const Login = () => {
                             Submit
                         </Button>
                     </Form>
-                    <GoogleOAuthProvider clientId="809388333953-mp4ic4ssmigroi4aa1oi98opm2u0cgjt.apps.googleusercontent.com">
+                    <GoogleOAuthProvider
+                        clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}
+                    >
                         <GoogleLogin />
                     </GoogleOAuthProvider>
                 </Card>

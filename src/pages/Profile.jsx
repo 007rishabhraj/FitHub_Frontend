@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
     Card,
-    Col,
     FloatingLabel,
     Form,
     Image,
@@ -9,6 +8,7 @@ import {
     Row,
     Button,
 } from "react-bootstrap";
+console.log(import.meta.env.VITE_BACKEND);
 
 const Profile = () => {
     const [show, setShow] = useState(false);
